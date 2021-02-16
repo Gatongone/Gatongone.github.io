@@ -8,7 +8,7 @@
     font-family: 'consola';  
     src: url("/fonts/consola.ttf");
 }
-*
+page_content *
 {
    color:rgba(177, 176, 186, 0.842); 
    font-family:"consola";
@@ -89,7 +89,7 @@ code
     margin-right: 2%;
 
 }
-img
+page_content img
 {
     image-rendering: -moz-crisp-edges;      
     image-rendering:   -o-crisp-edges;        
