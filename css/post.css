@@ -1,18 +1,50 @@
-*
-{
-   color:rgba(164, 176, 185, 0.842); 
-}
 @font-face
 {
     font-family: 'pixel_font';  
     src: url("/fonts/Pixel_zh.TTF");
 }
+@font-face
+{
+    font-family: 'consola';  
+    src: url("/fonts/consola.ttf");
+}
+*
+{
+   color:rgba(177, 176, 186, 0.842); 
+   font-family:"consola";
+}
+
 #page_title
 {
     color: #179287;
     font-size: 35px;
     font-family: 'pixel_font';  
     filter:drop-shadow(0 0 4px rgba(54, 168, 126, 0.568));
+}
+table
+{
+   border-collapse: separate;
+   border-spacing: 0;
+}
+th
+{
+    border-bottom: 2px solid rgba(75, 72, 99, 0.659);
+    text-align: left;
+    padding-bottom: 7px;
+    padding-right: 30px;
+    padding-top:7px;
+    padding-left: 10px;
+}
+td
+{
+
+    border-bottom: 1px solid rgba(69, 58, 80, 0.659);
+    padding-bottom: 7px;
+    padding-right: 30px;
+    padding-top:7px;
+    padding-left: 10px;
+    font-size: 14px;
+
 }
 hr
 {

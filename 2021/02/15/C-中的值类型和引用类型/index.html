@@ -159,7 +159,6 @@
     <div class="page_title" id="page_title">
         C#中的值类型和引用类型
     </div>
-        
     <hr>
     <div class="page_content">
         
@@ -187,9 +186,8 @@
 </li>
 </ul>
 </br>
-</br>
-</br>
 
+<hr>
 <h2 id="值类型和引用类型的区别"><a href="#值类型和引用类型的区别" class="headerlink" title="值类型和引用类型的区别"></a>值类型和引用类型的区别</h2><ul>
 <li><p>值类型实例一般保存在线程栈中，因此不受GC的控制，缓解了托管堆中的压力。值类型的实例就是自己本身。值类型创建时，runtime会为其分配一个内存空间到栈上。</p>
 </li>
@@ -199,9 +197,8 @@
 </li>
 </ul>
 </br>
-</br>
-</br>
 
+<hr>
 <h2 id="值类型和引用类型的转换（装箱与拆箱）"><a href="#值类型和引用类型的转换（装箱与拆箱）" class="headerlink" title="值类型和引用类型的转换（装箱与拆箱）"></a>值类型和引用类型的转换（装箱与拆箱）</h2><ul>
 <li><h3 id="装箱"><a href="#装箱" class="headerlink" title="装箱"></a>装箱</h3>  装箱就是将值类型转换成引用类型，过程为：<ol>
 <li>在托管堆中分配内存，容量为：实例字段 + 类型指针 + 同步块索引</li>
@@ -228,9 +225,8 @@ int i = (int)obj;
 </li>
 </ul>
 </br>
-</br>
-</br>
 
+<hr>
 <h2 id="语句块与GC"><a href="#语句块与GC" class="headerlink" title="语句块与GC"></a>语句块与GC</h2><ul>
 <li><h3 id="语句块"><a href="#语句块" class="headerlink" title="语句块"></a>语句块</h3><p>   一般可以把C#中语句块分为四个层级：</p>
 <ul>
@@ -268,9 +264,8 @@ int i = (int)obj;
 </li>
 </ul>
 </br>
-</br>
-</br>
 
+<hr>
 <h2 id="结构体和类"><a href="#结构体和类" class="headerlink" title="结构体和类"></a>结构体和类</h2><pre><code class="C#"> public struct StructTest
  &#123;
      float num1;
@@ -362,10 +357,8 @@ int i = (int)obj;
 </tr>
 </tbody></table>
 </br>
-</br>
-</br>
 
-
+<hr>
 <h2 id="值类型数组和引用类型数组"><a href="#值类型数组和引用类型数组" class="headerlink" title="值类型数组和引用类型数组"></a>值类型数组和引用类型数组</h2><pre><code class="C#"> int[] array = new int[]&#123;1,2,3,4,5,6&#125;;
  object[] objlist = new object[]&#123;1,2,3,4,5,6&#125;;
 </code></pre>
@@ -380,8 +373,7 @@ int i = (int)obj;
 </li>
 </ul>
 </br>
-</br>
-</br>
+---
 
 <h2 id="is和as-对类型的判断和转换"><a href="#is和as-对类型的判断和转换" class="headerlink" title="is和as:对类型的判断和转换"></a>is和as:对类型的判断和转换</h2><ul>
 <li><h2 id="as"><a href="#as" class="headerlink" title="as"></a>as</h2><pre><code class="C#">    Object obj = new Object();

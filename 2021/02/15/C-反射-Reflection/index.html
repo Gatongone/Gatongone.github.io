@@ -159,7 +159,6 @@
     <div class="page_title" id="page_title">
         C#反射(Reflection)
     </div>
-        
     <hr>
     <div class="page_content">
         
@@ -170,15 +169,22 @@
 </li>
 <li><p>元数据：用来描述数据的数据，本质上就是用于描述被编译成程序集之前的各种类、成员等信息，元数据是保存在程序集中的。</p>
 </br>
-</br>
+
 </li>
 </ul>
 </li>
+</ul>
+<hr>
+<ul>
 <li><h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>在程序运行时，可以获得其他程序集或自身程序集中的元数据，该过程就叫反射。</p>
 <p>也就是说通过反射可以时，可以使用其他程序集中的类、变量、特性等，而不用自己实现。</p>
   </br>
   </br>
+
 </li>
+</ul>
+<hr>
+<ul>
 <li><h2 id="三种关键类型"><a href="#三种关键类型" class="headerlink" title="三种关键类型:"></a>三种关键类型:</h2><ul>
 <li><h3 id="Type"><a href="#Type" class="headerlink" title="Type:"></a>Type:</h3><p>表示某一类型并存储其信息，在反射中用于获取类的相关信息（构造函数、方法、成员变量、属性、事件等），是访问元数据的主要方式。</p>
 <p>获取Type的方法主要有</p>
@@ -274,9 +280,13 @@
     Object obj2 = Activator.CreateInstance(classType ,参数1 ,参数2);
 </code></pre>
 </br>
+
 </li>
 </ul>
 </li>
+</ul>
+<hr>
+<ul>
 <li><h2 id="反射过程"><a href="#反射过程" class="headerlink" title="反射过程"></a>反射过程</h2><p>  假设在某个程序集中有</p>
 <pre><code class="C#">namespace Markdown.Codes
 &#123;
@@ -327,18 +337,15 @@
     &#123;
         //获得程序集,如果是当前程序集则不需要
         Assembly assembly = Assembly.LoadFrom(@&quot;E:\khaki\Markdown\bin\Debug\net5.0\Markdown&quot;);
-
-
-</code></pre>
-</li>
-</ul>
-<pre><code>        //获得类
+        
+        
+        //获得类
         //其他程序集
         Type classType = assembly.GetType(&quot;Markdown.Codes.Test&quot;);
         //当前程序集
         //Type classType = Type.GetType(&quot;Markdown.Codes.Test&quot;);
 
-
+        /*------------------------------------------------------------*/
 
         //获得无参构造函数,参数为形参类型没有则填new Type[0]，不能填null
         ConstructorInfo ctorinfo1 = classType.GetConstructor(new Type[0]);
@@ -347,8 +354,8 @@
         //或直接执行并赋值
         obj1 = Activator.CreateInstance(classType);
 
-
-
+        /*------------------------------------------------------------*/
+        
         //获得有参构造函数,参数为形参类型
         ConstructorInfo ctorinfo2 = classType.GetConstructor(new Type[] &#123; typeof(int), typeof(string) &#125;);
         //执行构造函数
@@ -356,8 +363,8 @@
         //或直接执行并赋值
         obj2 = Activator.CreateInstance(classType, 55, &quot;关东关&quot;);
 
-
-
+        /*------------------------------------------------------------*/
+        
         //获得成员变量
         FieldInfo fieldInfo = classType.GetField(&quot;name&quot;);
         //为字段赋值
@@ -370,8 +377,8 @@
         //相当于obj2.name;
         Console.WriteLine(fieldInfo.GetValue(obj2));
 
-
-
+        /*------------------------------------------------------------*/
+        
         //获得方法
         //参数1：方法名
         //参数2：为形参类型
@@ -382,22 +389,23 @@
         //相当于obj2.Method();
         methodInfo.Invoke(obj2, null);
 
-
-
+        /*------------------------------------------------------------*/
+        
         //获得属性
         PropertyInfo propInfo = classType.GetProperty(&quot;Num&quot;);
         //参数1：被赋值的对象
         //参数2：赋值的值
         //相当于obj2.Num=80;
         propInfo.SetValue(obj2, 80);
-        //获取字段
+        //获取属性
         //参数为对象名
         //相当于obj2.Num;
         Console.WriteLine(propInfo.GetValue(obj2));
     &#125;
 &#125;
-```
 </code></pre>
+</li>
+</ul>
 
     </div>
     

@@ -159,7 +159,6 @@
     <div class="page_title" id="page_title">
         unity脚本生命周期
     </div>
-        
     <hr>
     <div class="page_content">
         
@@ -168,6 +167,7 @@
 <p>摘自unity官方手册：<a target="_blank" rel="noopener" href="https://docs.unity3d.com/2019.3/Documentation/Manual/ExecutionOrder.html">https://docs.unity3d.com/2019.3/Documentation/Manual/ExecutionOrder.html</a></p>
 </blockquote>
 <p><img src="https://raw.githubusercontent.com/Gatongone/ImageContainer/main/Others/unity%20Mono%E8%84%9A%E6%9C%AC%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt="alt" style="max-width:100%;" ></p>
+<hr>
 <ul>
 <li><h2 id="场景第一次加载"><a href="#场景第一次加载" class="headerlink" title="场景第一次加载"></a>场景第一次加载</h2><p>当 场景 开始时会调用这些函数（场景中每个对象执行一次）</p>
 <ul>
@@ -177,20 +177,32 @@
 <li><h3 id="请注意，对于添加到场景中的对象，所有-脚本-的-Awake-和-OnEnable-函数中的任何一个，在调用Start，Update等之前调用。当然，在游戏过程中实例化对象时，不能强制执行此操作。"><a href="#请注意，对于添加到场景中的对象，所有-脚本-的-Awake-和-OnEnable-函数中的任何一个，在调用Start，Update等之前调用。当然，在游戏过程中实例化对象时，不能强制执行此操作。" class="headerlink" title="请注意，对于添加到场景中的对象，所有 脚本 的 Awake 和 OnEnable 函数中的任何一个，在调用Start，Update等之前调用。当然，在游戏过程中实例化对象时，不能强制执行此操作。"></a>请注意，对于添加到场景中的对象，所有 脚本 的 Awake 和 OnEnable 函数中的任何一个，在调用Start，Update等之前调用。当然，在游戏过程中实例化对象时，不能强制执行此操作。</h3></li>
 </ul>
 </li>
+</ul>
+<hr>
+<ul>
 <li><h2 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h2><ul>
 <li><h3 id="Reset："><a href="#Reset：" class="headerlink" title="Reset："></a>Reset：</h3>   调用 Reset 以在脚本首次附加到对象时以及使用重置命令时初始化脚本的属性。</li>
 </ul>
 </li>
+</ul>
+<hr>
+<ul>
 <li><h2 id="在第一帧更新之前"><a href="#在第一帧更新之前" class="headerlink" title="在第一帧更新之前"></a>在第一帧更新之前</h2><ul>
 <li><h3 id="Start："><a href="#Start：" class="headerlink" title="Start："></a>Start：</h3><p>   仅在启用脚本实例时才在第一帧更新之前调用 Start。</p>
 <p>   对于添加到场景中的对象，将在所有脚本上调用 Start 函数，然后为其中任何脚本调用 Update 等。当然，在游戏过程中实例化对象时，不能强制执行此操作。</p>
 </li>
 </ul>
 </li>
+</ul>
+<hr>
+<ul>
 <li><h2 id="在帧之间"><a href="#在帧之间" class="headerlink" title="在帧之间"></a>在帧之间</h2><ul>
 <li><h3 id="OnApplicationPause："><a href="#OnApplicationPause：" class="headerlink" title="OnApplicationPause："></a>OnApplicationPause：</h3>   在检测到暂停的帧的末尾调用，有效地在正常帧更新之间调用。调用 OnApplicationPause 后，将发出一个额外的帧，以允许游戏显示指示暂停状态的图形。</li>
 </ul>
 </li>
+</ul>
+<hr>
+<ul>
 <li><h2 id="更新顺序"><a href="#更新顺序" class="headerlink" title="更新顺序"></a>更新顺序</h2><p>  当你跟踪游戏逻辑和交互、动画、相机和位置等，您可以使用一些不同的事件。常见模式是在 Update 函数中执行大多数任务，但也可以使用其他函数。</p>
 <ul>
 <li><h3 id="FixedUpdate："><a href="#FixedUpdate：" class="headerlink" title="FixedUpdate："></a>FixedUpdate：</h3>   通常比 Update 更频繁地调用 FixedUpdate。如果帧速率低，则可以每帧调用多次，如果帧速率高，则可以不在帧之间调用。所有物理计算和更新在 FixedUpdate 之后立即发生。在 FixedUpdate 中应用移动计算时，您不需要将您的值乘以 Time.deltaTime。这是因为在可靠的定时器上调用 FixedUpdate，与帧速率无关。</li>
@@ -198,6 +210,9 @@
 <li><h3 id="LateUpdate："><a href="#LateUpdate：" class="headerlink" title="LateUpdate："></a>LateUpdate：</h3>   在 Update 完成后，每帧调用一次 LateUpdate。在 LateUpdate 开始时，将在 Update 中执行的任何计算都已完成。LateUpdate 的一个常见用途是使用以下第三人称相机。如果您使角色移动并在 Update 内转向，您可以在 LateUpdate 中执行所有相机移动和旋转计算。这将确保角色在摄像机跟踪其位置之前完全移动。</li>
 </ul>
 </li>
+</ul>
+<hr>
+<ul>
 <li><h2 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h2><ul>
 <li><h3 id="OnPreCull："><a href="#OnPreCull：" class="headerlink" title="OnPreCull："></a>OnPreCull：</h3><p>   在相机剔除场景之前调用。剔除决定哪些对象对相机可见。在剔除之前调用 OnPreCull。</p>
 </li>
@@ -219,6 +234,9 @@
 </li>
 </ul>
 </li>
+</ul>
+<hr>
+<ul>
 <li><h2 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h2><ul>
 <li><h3 id="Update：-1"><a href="#Update：-1" class="headerlink" title="Update："></a>Update：</h3><p>   函数返回后运行正常的协同程序更新。协程是一个可以暂停执行（yield）直到给定的 YieldInstruction 完成的函数。协程的不同用途：</p>
 </li>
@@ -234,10 +252,16 @@
 </li>
 </ul>
 </li>
+</ul>
+<hr>
+<ul>
 <li><h2 id="当对象被销毁"><a href="#当对象被销毁" class="headerlink" title="当对象被销毁"></a>当对象被销毁</h2><ul>
 <li><h3 id="OnDestroy："><a href="#OnDestroy：" class="headerlink" title="OnDestroy："></a>OnDestroy：</h3>   在对象存在的最后一帧的所有帧更新之后调用此函数（该对象可能会在响应 Object.Destroy 或场景关闭时被销毁）。</li>
 </ul>
 </li>
+</ul>
+<hr>
+<ul>
 <li><h2 id="退出时"><a href="#退出时" class="headerlink" title="退出时"></a>退出时</h2><p>  在场景中的所有活动对象上调用这些函数：</p>
 <ul>
 <li><h3 id="OnApplicationQuit："><a href="#OnApplicationQuit：" class="headerlink" title="OnApplicationQuit："></a>OnApplicationQuit：</h3><p>   在退出应用程序之前，在所有游戏对象上调用此函数。在编辑器中，当用户停止播放模式时调用它。</p>
