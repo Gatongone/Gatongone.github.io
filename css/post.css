@@ -8,7 +8,7 @@
     font-family: 'consola';  
     src: url("/fonts/consola.ttf");
 }
-page_content *
+.page_content *
 {
    color:rgba(177, 176, 186, 0.842); 
    font-family:"consola";
