@@ -10,8 +10,10 @@
 .post_title
 {
     text-decoration: none;
-    color: #179287;
-    filter:drop-shadow(0 0 2px #179287);
+    color: #4078cc;
+    filter:drop-shadow(0 0 2px #0c31d3);
+    /* color: #4078cc;
+    filter:drop-shadow(0 0 2px #0c31d3); */
     font-size: 26px;
     
 }
