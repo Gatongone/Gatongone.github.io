@@ -60,10 +60,8 @@
 }
 .post_entry div img:nth-child(5)
 {
-    width:19px;
-    height:23px;
     margin-left:30px;
-    margin-top: 0.5px;
+    filter:blur(0.1px);
 }
 .post_entry div span:nth-child(2)
 {
