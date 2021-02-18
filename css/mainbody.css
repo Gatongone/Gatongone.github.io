@@ -83,3 +83,10 @@
     opacity: 0.5;
 
 }
+.paginator
+{
+    float:bottom;
+    color: #fff;
+    width: 100%;
+    height:auto;
+}

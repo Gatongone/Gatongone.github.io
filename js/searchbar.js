@@ -10,9 +10,13 @@ function textOnBlur(obj)
 }
 function searchWtihBaidu(obj)
 {
-
     if(event.which==13)
         window.open("https://www.baidu.com/s?ie=utf-8&f=3&rsv_bp=1&tn=baidu&wd=" + obj.value);
-
+}
+function searchInSite(url,obj)
+{
+    if(event.which==13)
+        window.open(url + ':' + obj.value, '_self');
+    
     
 }
